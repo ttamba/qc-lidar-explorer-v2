@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QC LiDAR Explorer (V1)</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="map"></div>
+      <div id="panel" class="panel">
+        <div class="panel__header">
+          <div class="panel__title">QC LiDAR Explorer</div>
+          <div class="panel__subtitle">V1 – empreintes + chargement COPC/EPT via maplibre-gl-lidar</div>
+        </div>
+
+        <div class="panel__section">
+          <button id="btnSearch" class="btn">Rechercher dans l’emprise</button>
+          <label class="checkbox">
+            <input id="chkFootprints" type="checkbox" checked />
+            Afficher les empreintes
+          </label>
+        </div>
+
+        <div class="panel__section">
+          <div class="hint">
+            ⚠️ Pour une expérience “USGS-like”, les URLs doivent pointer vers du <b>COPC (.copc.laz)</b> ou un <b>EPT (ept.json)</b>.
+            Le portail Québec fournit surtout du LAZ “classique” : il faut généralement un prétraitement COPC/EPT.
+          </div>
+        </div>
+
+        <div class="panel__section">
+          <div class="panel__label">Résultats</div>
+          <div id="results" class="results"></div>
+        </div>
+
+        <div class="panel__section">
+          <div class="panel__label">Sources Québec (référence)</div>
+          <ul class="links">
+            <li><a href="https://www.donneesquebec.ca/recherche/dataset/donnees-lidar-du-quebec" target="_blank" rel="noreferrer">Données LiDAR du Québec (Données Québec)</a></li>
+            <li><a href="https://www.donneesquebec.ca/recherche/dataset/produits-derives-de-base-du-lidar" target="_blank" rel="noreferrer">Produits dérivés (MNT etc.)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
