@@ -24,7 +24,7 @@ export default function MapView(props: Props) {
   const mapRef = useRef<Map | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const cacheRef = useRef<Map<string, TileFeature[]>>(new Map()); // chunkPath -> features
+  const cacheRef = useRef<globalThis.Map<string, TileFeature[]>>(new globalThis.Map()); // chunkPath -> features
 
   const styleSpec = useMemo(() => {
     // style minimal : raster OSM depuis basemaps.json si dispo, sinon fallback
