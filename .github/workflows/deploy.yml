@@ -28,6 +28,20 @@ jobs:
 
       - name: Install
         run: npm ci
+        
+            - name: Install
+        run: npm ci
+
+      - name: Debug installed deps
+        run: |
+          node -v
+          npm -v
+          npm config get production
+          npm config get omit
+          node -p "process.env.NODE_ENV"
+          ls -la node_modules/@vitejs || true
+          ls -la node_modules/@vitejs/plugin-react || true
+          node -p "require('./package.json').devDependencies['@vitejs/plugin-react']" || true
 
       - name: Build
         run: npm run build
