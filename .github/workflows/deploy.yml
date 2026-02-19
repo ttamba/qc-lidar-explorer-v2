@@ -29,7 +29,7 @@ jobs:
       - name: Install
         run: npm ci
         
-            - name: Install
+      - name: Install
         run: npm ci
 
       - name: Debug installed deps
